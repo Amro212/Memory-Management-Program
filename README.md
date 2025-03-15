@@ -1,31 +1,3 @@
-# IMPLEMENTATION REPORT
-
-What has been completed?
-
-## Basic Functionality (35%)
-
-- Succesfully implemented the basic functionality of the memory manager, including allocation (A) and freeing (F/R) of memory blocks using a single large malloc for the entire memory space.
-- The code handles all strategies discussed in the assignment: first-fit, best-fit, and worst-fit.
-
-## Merging Free Chunks (15%)
-
-- The developed code successfully merges adjacent free chunks whenever a block is freed. Implemented by the function `merge_free_chunks()`.
-
-## Internal Indexing (20%)
-
-- Used a fixed-size array (`chunks[MAX_CHUNKS]`) to store metadata for each memory block, each holding `start`, `size`, `allocated`, and `id`.
-- The code also accounts for overhead of the `block` struct used when allocating memory blocks using `sizeof(block)`.
-
-## Experimental Analysis (15%)
-
-- Successfully created multiple test files (test1.txt, test2.txt, test3.txt) to experiment with different allocation patterns and strategies.
-
-## Final Report (15%)
-
-- This `OUTCOMES.md` will act as the final report documenting the process and results of the assignment.
-
-
-
 # EXPERIMENTS
 
 The following experiments were conducted to analyze and compare the behavior of different memory allocation strategies (first-fit, best-fit, and worst-fit) under various allocation patterns. Each test file was designed to test specific scenarios to understand how the different strategies handle memory, allocation efficiency, and overall performance.
