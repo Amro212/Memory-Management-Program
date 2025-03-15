@@ -130,13 +130,3 @@ ALLOCATED/FREE BYTES:
 1100 bytes allocated
 2996 bytes free (merged)
 Total overhead: 128 bytes (16 bytes per allocation)
-
-## QUESTIONS
-
-1. Which algorithm manages memory in the least overall number of chunks?
-
-Theoritically speaking, `best-fit` algorithm is the strategy that results in the ffewest total chunks by the end of the runs. This is because it attempts to place each allocation into the free block that leaves the smallest leftover space. However, based on my experimentation, all three algorithms (first-fit, best-fit, and worst-fit) manage memory with the same number of chunks in most cases (worst-fit is the exception as discussed in the test1.txt and test3.txt experiments). This is because the number of chunks is primarily determined by the pattern of allocations and deallocations, and all strategies use the same `merge_adjacent_free_blocks()` function to consolidate free spaces. The strategies differ in where they place allocations but not in how many chunks they maintain.
-
-2. Which algorithm manages memory with the greatest number of successful allocations?
-
-Based on the experimental results, all three algorithms (first-fit, best-fit, and worst-fit) achieved the same number of successful allocations across all test cases. This is because they all operate on the same total memory space and use the same block overhead. The difference between the strategies lies in where they place the allocations, not in how many allocations they can accommodate. Each strategy was able to handle the same allocation requests successfully, just with different placement strategies: first-fit places allocations in the first available space large enough, best-fit places allocations in the smallest suitable space, and worst-fit places allocations in the largest suitable space.
